@@ -69,14 +69,14 @@ function addToDisplay(key){
 
 //function for operator keys. At this pt, we have a (1st #) and the operator. I need to store 'a' and 'operator' and clear the display
 function operatorSelected(operator) {
-    a = parseInt(displayVal.getVal);
+    a = parseFloat(displayVal.getVal);
     displayVal.setVal = "";
     globalOperator = operator.textContent;
 }
 
 //function for equals key. We have 'a', 'globalOperator', and now 'b'. Time to put it all together
 function equalsSelected() {
-    let b = parseInt(displayVal.getVal);
+    let b = parseFloat(displayVal.getVal);
     let answer = operate(globalOperator, a, b);
     displayVal.setVal = answer;
 }
