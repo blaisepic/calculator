@@ -1,0 +1,64 @@
+html, body {
+    margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+    background: #ededed;
+}
+
+.container {
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+}
+
+.calculator {
+    width: 30rem;
+    height: 35rem;
+    margin-left: auto;
+    margin-right: auto;
+
+    display: flex;
+    flex-direction: column;
+    background: gray;
+    border: 1rem solid black;
+    border-radius: .5rem;
+}
+
+row {
+    background: orange;
+    flex: 1;
+    flex-wrap: wrap;
+    display: flex;
+    flex-direction: row;
+}
+
+key {
+    flex: 1;
+    flex-wrap: wrap;
+    background: grey;
+    border: .1rem solid black;
+    margin: .6rem;
+}
+
+.display {
+
+}
+
+.display-key {
+    
+}
+
+.clear-delete {
+
+}
+.clear {
+
+}
+
+.delete {
+
+}
+
