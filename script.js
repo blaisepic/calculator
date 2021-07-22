@@ -26,7 +26,7 @@ const multiply = (a,b) => a*b;
 const divide = (a,b) => a/b;
 
 //operator function -- given an operator and 2 #s -- call one of the above functions to calculate
-function operator(operator, a, b){
+function operate(operator, a, b){
     dict = {
         "+": add(a,b),
         "-": subtract(a,b),
@@ -46,8 +46,10 @@ let operators = document.querySelectorAll(".operator");
 operators.forEach(operator => operator.addEventListener('click', () => operatorSelected(operator)));
 
 //add eventListener to the equals key
+let equalsKey = document.querySelector(".equals");
+equalsKey.addEventListener('click', equalsSelected);
 
-//function for the keys
+//function for the # keys
 function addToDisplay(key){
     let keyValue = key.textContent;
     let newVal = displayVal.getVal;
@@ -57,13 +59,19 @@ function addToDisplay(key){
     console.log("val: " + displayVal.getVal);
 }
 
-//function for when the operator has been selected. At this pt, we have a (1st #) and the operator. I need to store 'a' and 'operator' and clear the display
+//function for operator keys. At this pt, we have a (1st #) and the operator. I need to store 'a' and 'operator' and clear the display
 function operatorSelected(operator) {
     a = parseInt(displayVal.getVal);
     displayVal.setVal = "";
     globalOperator = operator.textContent;
 }
 
+//function for equals key. We have 'a', 'globalOperator', and now 'b'. Time to put it all together
+function equalsSelected() {
+    let b = parseInt(displayVal.getVal);
+    let answer = operate(globalOperator, a, b);
+    displayVal.setVal = answer;
+}
 
 
 
