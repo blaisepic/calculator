@@ -1,5 +1,20 @@
-//querySelectors
+//querySelectors and variables
 let calculator = document.querySelector(".calculator");
+let displayKey = document.querySelector(".display-key");
+let a = 0, b = 0;
+let globalOperator = "";
+// let displayVal = ""; //anytime I change this value, call the changeDisplayVal()
+displayVal = {
+    val: "",
+    get getVal(){
+        return this.val;
+    },
+    set setVal(newVal){
+        this.val = newVal;
+        displayKey.textContent = this.val;
+    }
+};
+console.log("val: " + displayVal.getVal);
 
 //add, subtract, multiply, and divide functions
 const add = (a,b) => a+b;
@@ -22,7 +37,32 @@ function operator(operator, a, b){
     return dict[operator];
 }
 
+//add eventListener to each  # key
+let keys = document.querySelectorAll(".key");
+keys.forEach(key => key.addEventListener('click', () => addToDisplay(key)));
 
+//add eventListener to each operator key
+let operators = document.querySelectorAll(".operator");
+operators.forEach(operator => operator.addEventListener('click', () => operatorSelected(operator)));
+
+//add eventListener to the equals key
+
+//function for the keys
+function addToDisplay(key){
+    let keyValue = key.textContent;
+    let newVal = displayVal.getVal;
+    newVal += keyValue;
+    
+    displayVal.setVal = newVal;
+    console.log("val: " + displayVal.getVal);
+}
+
+//function for when the operator has been selected. At this pt, we have a (1st #) and the operator. I need to store 'a' and 'operator' and clear the display
+function operatorSelected(operator) {
+    a = parseInt(displayVal.getVal);
+    displayVal.setVal = "";
+    globalOperator = operator.textContent;
+}
 
 
 

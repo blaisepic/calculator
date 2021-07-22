@@ -42,13 +42,17 @@ key {
     border: .1rem solid black;
     margin: .6rem;
 }
-
+.key {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1.5rem; /*this is a bandaid vertical align fix*/
+}
 .display {
 
 }
 
 .display-key {
-    
+
 }
 
 .clear-delete {
@@ -60,5 +64,11 @@ key {
 
 .delete {
 
+}
+
+.operator {
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1.5rem; /*this is a bandaid vertical align fix*/
 }
 
