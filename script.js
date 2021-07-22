@@ -53,6 +53,10 @@ equalsKey.addEventListener('click', equalsSelected);
 let clearKey = document.querySelector(".clear");
 clearKey.addEventListener('click', clear);
 
+//add eventListener to the delete key
+let deleteKey = document.querySelector(".delete");
+deleteKey.addEventListener('click', deleteLast);
+
 //function for the # keys
 function addToDisplay(key){
     let keyValue = key.textContent;
@@ -81,6 +85,13 @@ function clear() {
     a = 0, b = 0, globalOperator = "";
     displayVal.setVal = "";
     console.log("cleared");
+}
+
+function deleteLast(){
+    let newVal = displayVal.getVal;
+    newVal = newVal.slice(0,-1);
+
+    displayVal.setVal = newVal;
 }
 
 
