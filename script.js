@@ -49,6 +49,10 @@ operators.forEach(operator => operator.addEventListener('click', () => operatorS
 let equalsKey = document.querySelector(".equals");
 equalsKey.addEventListener('click', equalsSelected);
 
+//add eventlistener to the clear key
+let clearKey = document.querySelector(".clear");
+clearKey.addEventListener('click', clear);
+
 //function for the # keys
 function addToDisplay(key){
     let keyValue = key.textContent;
@@ -71,6 +75,12 @@ function equalsSelected() {
     let b = parseInt(displayVal.getVal);
     let answer = operate(globalOperator, a, b);
     displayVal.setVal = answer;
+}
+
+function clear() {
+    a = 0, b = 0, globalOperator = "";
+    displayVal.setVal = "";
+    console.log("cleared");
 }
 
 
