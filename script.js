@@ -77,6 +77,13 @@ function operatorSelected(operator) {
 //function for equals key. We have 'a', 'globalOperator', and now 'b'. Time to put it all together
 function equalsSelected() {
     let b = parseFloat(displayVal.getVal);
+
+    if(globalOperator == '/' && b === 0){
+        alert("Can't divide by zero, pal.");
+        clear();
+        return;
+    }
+    
     let answer = operate(globalOperator, a, b);
     displayVal.setVal = answer;
 }
